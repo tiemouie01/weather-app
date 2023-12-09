@@ -10,6 +10,9 @@ export default function Location(
   const celsiusTemperature = temperature[0];
   const fahrenheitTemperature = temperature[1];
 
+  const getDate = () => datetime.split(" ")[0];
+  const getTime = () => datetime.split(" ")[1];
+
   return {
     name,
     celsiusTemperature,
@@ -17,7 +20,8 @@ export default function Location(
     precipitation,
     humidity,
     windSpeed,
-    datetime,
     condition,
+    getDate,
+    getTime,
   };
 }
