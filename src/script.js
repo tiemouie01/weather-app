@@ -1,3 +1,6 @@
-import { getData } from "./api";
+import fetchData from "./api";
+import viewWeatherData from "./console";
 
-getData("lilongwe");
+fetchData("lilongwe").then((response) => {
+  viewWeatherData(response);
+});

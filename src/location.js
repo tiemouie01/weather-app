@@ -17,6 +17,7 @@ export default function Location(
     precipitation,
     humidity,
     windSpeed,
+    datetime,
     condition,
   };
 }

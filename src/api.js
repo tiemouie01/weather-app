@@ -1,5 +1,4 @@
 import Location from "./location";
-import viewWeatherData from "./console";
 
 function extractData(locationData) {
   const { name } = locationData.location;
@@ -24,7 +23,7 @@ function extractData(locationData) {
   ];
 }
 
-async function fetchData(location) {
+export default async function fetchData(location) {
   // fetch data from the weather api.
   const url = `https://api.weatherapi.com/v1/current.json?key=8be0d307f40d43cbb3d51446233011&q=${location}`;
   const response = await fetch(url, { mode: "cors" });
@@ -33,12 +32,3 @@ async function fetchData(location) {
   // return a Location object from the retrieved data by spreading the array return from extractData()
   return Location(...extractData(locationData));
 }
-
-function getData(location) {
-  const weatherData = fetchData(location);
-  weatherData.then((response) => {
-    viewWeatherData(response);
-  });
-}
-
-export { getData };
