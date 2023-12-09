@@ -1,23 +1,22 @@
 export default function Location(
+  name,
   temperature,
   precipitation,
   humidity,
   windSpeed,
-  time,
-  day,
+  datetime,
   condition,
 ) {
-    const celsiusTemperature = temperature[0];
-    const fahrenheitTemperature = temperature[1];
+  const celsiusTemperature = temperature[0];
+  const fahrenheitTemperature = temperature[1];
 
-    return {
-        celsiusTemperature,
-        fahrenheitTemperature,
-        precipitation,
-        humidity,
-        windSpeed,
-        time,
-        day,
-        condition
-    }
+  return {
+    name,
+    celsiusTemperature,
+    fahrenheitTemperature,
+    precipitation,
+    humidity,
+    windSpeed,
+    condition,
+  };
 }
