@@ -3,4 +3,5 @@ export default function viewWeatherData(location) {
   console.table(location);
   console.log(location.getDate());
   console.log(location.getTime());
+  console.log(location.getFormattedDate());
 }
