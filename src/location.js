@@ -1,7 +1,8 @@
 import { format } from "date-fns";
 
 export default function Location(
-  name,
+  city,
+  country,
   temperature,
   precipitation,
   humidity,
@@ -14,21 +15,23 @@ export default function Location(
 
   const getDate = () => datetime.split(" ")[0];
   const getTime = () => datetime.split(" ")[1];
+  const getName = () => `${city}, ${country}`;
 
   // Methods that use date-fns.
   const getDayOfWeek = () => format(new Date(getDate()), "EEEE");
   const getDayOfMonth = () => format(new Date(getDate()), "d");
   const getMonth = () => format(new Date(getDate()), "MMMM");
-  const getFormattedDate = () => `${getDayOfWeek()}, ${getDayOfMonth()} ${getMonth()}`;
+  const getFormattedDate = () =>
+    `${getDayOfWeek()}, ${getDayOfMonth()} ${getMonth()}`;
 
   return {
-    name,
     celsiusTemperature,
     fahrenheitTemperature,
     precipitation,
     humidity,
     windSpeed,
     condition,
+    getName,
     getTime,
     getFormattedDate,
   };

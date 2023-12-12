@@ -1,7 +1,8 @@
 import Location from "./location";
 
 function extractData(locationData) {
-  const { name } = locationData.location;
+  const {country} = locationData.location;
+  const city = locationData.location.name;
   const temperature = [
     locationData.current.temp_c,
     locationData.current.temp_f,
@@ -13,7 +14,8 @@ function extractData(locationData) {
   const { humidity } = locationData.current;
 
   return [
-    name,
+    city,
+    country,
     temperature,
     precipitation,
     humidity,
