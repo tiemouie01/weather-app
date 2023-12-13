@@ -24,15 +24,23 @@ export default function Location(
   const getFormattedDate = () =>
     `${getDayOfWeek()}, ${getDayOfMonth()} ${getMonth()}`;
 
-  return {
+  const getWeatherData = () => [
     celsiusTemperature,
     fahrenheitTemperature,
     precipitation,
     humidity,
     windSpeed,
     condition,
-    getName,
-    getTime,
-    getFormattedDate,
+  ];
+  const getLocationData = () => [
+    getName(),
+    getFormattedDate(),
+    getTime(),
+    condition,
+  ];
+
+  return {
+    getWeatherData,
+    getLocationData,
   };
 }
