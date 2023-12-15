@@ -1,6 +1,31 @@
 import Location from "./location";
 import fetchData from "./api";
 
+function addLocationData(name, date, time, condition) {
+  // Create a container for the location data.
+  const locationContainer = document.createElement("div");
+  locationContainer.className = "location-container";
+
+  // Add values necessary location details to the container.
+  const nameElement = document.createElement("h2");
+  nameElement.className = "location-value";
+  locationContainer.appendChild(nameElement);
+
+  const dateElement = document.createElement("p");
+  dateElement.className = "location-value";
+  locationContainer.appendChild(dateElement);
+
+  const timeElement = document.createElement("p");
+  timeElement.className = "location-value";
+  locationContainer.appendChild(timeElement);
+
+  const conditionElement = document.createElement("p");
+  conditionElement.className = "location-value";
+  locationContainer.appendChild(conditionElement);
+
+  return locationContainer;
+}
+
 function toggleTemperature(event, celsiusTemperature, fahrenheitTemperature) {
   const temperature = document.querySelector(".temperature").textContent;
   const toggleButton = event.target;
@@ -58,7 +83,7 @@ function addWeatherData(
 
   // Add a div that holds the temperature value and its corresponding toggle button.
   const temperatureContainer = document.createElement("div");
-  const temperature = document.createElement("p");
+  const temperature = document.createElement("h2");
   temperature.className = "temperature";
   temperature.textContent = `${celsiusTemperature} °C`;
   temperatureContainer.appendChild(temperature);
@@ -109,8 +134,14 @@ export default function Interface() {
       const locationData = response;
       const mainContainer = document.querySelector(".main-content");
 
+      // Add weather data to the left of the page.
       mainContainer.appendChild(
         addWeatherData(...locationData.getWeatherDetails),
+      );
+
+      // Add location data to the right of the page.
+      mainContainer.appendChild(
+        addLocationData(...locationData.getLocationDetails()),
       );
     });
   });
