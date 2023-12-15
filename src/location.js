@@ -24,7 +24,7 @@ export default function Location(
   const getFormattedDate = () =>
     `${getDayOfWeek()}, ${getDayOfMonth()} ${getMonth()}`;
 
-  const getWeatherData = () => [
+  const getWeatherDetails = () => [
     celsiusTemperature,
     fahrenheitTemperature,
     precipitation,
@@ -32,7 +32,7 @@ export default function Location(
     windSpeed,
     condition,
   ];
-  const getLocationData = () => [
+  const getLocationDetails = () => [
     getName(),
     getFormattedDate(),
     getTime(),
@@ -40,7 +40,7 @@ export default function Location(
   ];
 
   return {
-    getWeatherData,
-    getLocationData,
+    getWeatherDetails,
+    getLocationDetails,
   };
 }
