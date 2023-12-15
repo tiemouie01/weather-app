@@ -1,4 +1,4 @@
-import Location from "./location";
+// import Location from "./location";
 import fetchData from "./api";
 
 function addLocationData(name, date, time, condition) {
@@ -8,18 +8,22 @@ function addLocationData(name, date, time, condition) {
 
   // Add values necessary location details to the container.
   const nameElement = document.createElement("h2");
+  nameElement.textContent = name;
   nameElement.className = "location-value";
   locationContainer.appendChild(nameElement);
 
   const dateElement = document.createElement("p");
+  dateElement.textContent = date;
   dateElement.className = "location-value";
   locationContainer.appendChild(dateElement);
 
   const timeElement = document.createElement("p");
+  timeElement.textContent = time;
   timeElement.className = "location-value";
   locationContainer.appendChild(timeElement);
 
   const conditionElement = document.createElement("p");
+  conditionElement.textContent = condition;
   conditionElement.className = "location-value";
   locationContainer.appendChild(conditionElement);
 
@@ -27,10 +31,10 @@ function addLocationData(name, date, time, condition) {
 }
 
 function toggleTemperature(event, celsiusTemperature, fahrenheitTemperature) {
-  const temperature = document.querySelector(".temperature").textContent;
+  const temperature = document.querySelector(".temperature");
   const toggleButton = event.target;
 
-  if (temperature.includes("C")) {
+  if (temperature.textContent.includes("C")) {
     temperature.textContent = `${fahrenheitTemperature} °F`;
     toggleButton.textContent = "°C";
   } else {
@@ -94,22 +98,23 @@ function addWeatherData(
     event.stopPropagation();
     toggleTemperature(event, celsiusTemperature, fahrenheitTemperature);
   });
+  temperatureContainer.appendChild(toggleButton);
   dataContainer.appendChild(temperatureContainer);
 
   // Add remaining weather data values.
   const precipitationElement = document.createElement("p");
   precipitationElement.className = "weather-value";
-  precipitationElement.textContent = precipitation;
+  precipitationElement.textContent = `Precipitaion: ${precipitation}%`;
   dataContainer.appendChild(precipitationElement);
 
   const humidityElement = document.createElement("p");
   humidityElement.className = "weather-value";
-  humidityElement.textContent = humidity;
+  humidityElement.textContent = `Humidity: ${humidity}%`;
   dataContainer.appendChild(humidityElement);
 
   const windSpeedElement = document.createElement("p");
   windSpeedElement.className = "weather-value";
-  windSpeedElement.textContent = windSpeed;
+  windSpeedElement.textContent = `Wind Speed: ${windSpeed} km/h`;
   dataContainer.appendChild(windSpeedElement);
 
   weatherContainer.appendChild(dataContainer);
@@ -129,14 +134,14 @@ export default function Interface() {
     }
 
     // Collect the search value from the input and set it as the location name.
-    const locationName = document.getElementById("location");
+    const locationName = document.getElementById("location").value;
     fetchData(locationName).then((response) => {
       const locationData = response;
       const mainContainer = document.querySelector(".main-content");
 
       // Add weather data to the left of the page.
       mainContainer.appendChild(
-        addWeatherData(...locationData.getWeatherDetails),
+        addWeatherData(...locationData.getWeatherDetails()),
       );
 
       // Add location data to the right of the page.
