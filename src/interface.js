@@ -71,8 +71,23 @@ function addWeatherData(
   });
   dataContainer.appendChild(temperatureContainer);
 
-  weatherContainer.appendChild(dataContainer);
+  // Add remaining weather data values.
+  const precipitationElement = document.createElement("p");
+  precipitationElement.className = "weather-value";
+  precipitationElement.textContent = precipitation;
+  dataContainer.appendChild(precipitationElement);
 
+  const humidityElement = document.createElement("p");
+  humidityElement.className = "weather-value";
+  humidityElement.textContent = humidity;
+  dataContainer.appendChild(humidityElement);
+
+  const windSpeedElement = document.createElement("p");
+  windSpeedElement.className = "weather-value";
+  windSpeedElement.textContent = windSpeed;
+  dataContainer.appendChild(windSpeedElement);
+
+  weatherContainer.appendChild(dataContainer);
   return weatherContainer;
 }
 
