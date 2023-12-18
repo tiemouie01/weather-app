@@ -1,13 +1,27 @@
 body {
   box-sizing: border-box;
-  background: url("./img/umbrella-background.jpg");
-  background-size: cover;
 }
 
 #content {
+  background-image: url("./img/umbrella-background.jpg");
+  background-size: cover;
+  background-position: center;
+
   display: grid;
   grid-template-rows: 1fr 1fr 2fr;
   align-items: center;
+
+  position: relative;
+  isolation: isolate;
+}
+
+#content::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: black;
+  opacity: 0.6;
 }
 
 .header {
@@ -52,11 +66,11 @@ body {
 
 .temperature-container {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr;
 }
 
 .weather-container svg {
-    height: 150px;
+  height: 150px;
 }
 
 .location-container {
