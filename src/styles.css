@@ -1,4 +1,64 @@
+body {
+  box-sizing: border-box;
+  background: url("./img/umbrella-background.jpg");
+  background-size: cover;
+}
+
+#content {
+  display: grid;
+  grid-template-rows: 1fr 1fr 2fr;
+  align-items: center;
+}
+
+.header {
+  grid-row: 1;
+}
+
+.header h1 {
+  text-align: center;
+}
+
+.search-bar {
+  grid-row: 2;
+}
+
+.search-bar form {
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  flex: 1;
+}
+
 .search-bar svg {
-    fill: black;
-    width: 20px;
+  fill: black;
+  width: 20px;
+}
+
+.main-content {
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.weather-container {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.temperature-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.weather-container svg {
+    height: 150px;
+}
+
+.location-container {
+  grid-column: 2;
 }

@@ -1,4 +1,3 @@
-// import Location from "./location";
 import fetchData from "./api";
 
 function addLocationData(name, date, time, condition) {
@@ -87,6 +86,7 @@ function addWeatherData(
 
   // Add a div that holds the temperature value and its corresponding toggle button.
   const temperatureContainer = document.createElement("div");
+  temperatureContainer.className = "temperature-container";
   const temperature = document.createElement("h2");
   temperature.className = "temperature";
   temperature.textContent = `${celsiusTemperature} °C`;
