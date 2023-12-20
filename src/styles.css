@@ -23,14 +23,14 @@ svg {
   background-position: center;
 
   display: grid;
-  grid-template-rows: 1fr 1fr 2fr;
-  align-items: center;
+  grid-template-rows: 1fr 0.5fr 5fr;
   justify-content: center;
 
   position: relative;
   isolation: isolate;
 
   height: 100vh;
+  padding-top: 80px;
 }
 
 #content::after {
@@ -48,6 +48,7 @@ svg {
 
 .header {
   grid-row: 1;
+  align-self: center;
 }
 
 .header h1 {
