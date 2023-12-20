@@ -72,11 +72,17 @@ svg {
 
 .search-bar {
   grid-row: 2;
+
+  justify-self: center;
+  width: 400px;
 }
 
 .search-bar form {
   display: flex;
   justify-content: center;
+  gap: 12px;
+
+  height: 100%;
 }
 
 .search-bar input,
@@ -86,7 +92,24 @@ svg {
 
 .search-bar input {
   flex: 1;
+
   background-color: #e0f2fe;
+  font-size: 100%;
+  font-weight: bold;
+  padding-left: 10px;
+  
+  border-radius: 14px;
+  border: 0;
+  box-shadow: 0 0 8px black;
+  outline: none;
+}
+
+.search-bar button {
+  width: 50px;
+
+  border-radius: 11px;
+  border: 1px solid #0369a1;
+  box-shadow: 0 0 8px black;
 }
 
 .search-bar svg {
