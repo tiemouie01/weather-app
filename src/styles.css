@@ -25,9 +25,12 @@ svg {
   display: grid;
   grid-template-rows: 1fr 1fr 2fr;
   align-items: center;
+  justify-content: center;
 
   position: relative;
   isolation: isolate;
+
+  height: 100vh;
 }
 
 #content::after {
@@ -37,6 +40,10 @@ svg {
   inset: 0;
   background: rgb(30, 30, 30);
   opacity: 0.75;
+}
+
+.header, .search-bar, .main-content {
+  width: 800px;
 }
 
 .header {
