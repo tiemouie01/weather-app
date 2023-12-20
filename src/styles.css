@@ -3,6 +3,11 @@
   src: url("./fonts/inter.ttf");
 }
 
+@font-face {
+  font-family: inter-bold;
+  src: url("./fonts/Inter-ExtraBold.ttf");
+}
+
 body {
   box-sizing: border-box;
   font-family: inter, sans-serif;
@@ -55,6 +60,10 @@ svg {
 .header {
   grid-row: 1;
   align-self: center;
+
+  font-family: inter-bold, sans-serif;
+  font-style: italic;
+  font-size: 24px;
 }
 
 .header h1 {
