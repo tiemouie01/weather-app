@@ -2,6 +2,21 @@ body {
   box-sizing: border-box;
 }
 
+p,
+div,
+h1,
+button {
+  color: #bae6fd;
+}
+
+button {
+  background-color: #0369a1;
+}
+
+svg {
+  fill: #bae6fd;
+}
+
 #content {
   background-image: url("./img/umbrella-background.jpg");
   background-size: cover;
@@ -20,8 +35,8 @@ body {
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: black;
-  opacity: 0.6;
+  background: rgb(30, 30, 30);
+  opacity: 0.75;
 }
 
 .header {
@@ -41,12 +56,17 @@ body {
   justify-content: center;
 }
 
+.search-bar input,
+.search-bar input::placeholder {
+  color: #082f49;
+}
+
 .search-bar input {
   flex: 1;
+  background-color: #e0f2fe;
 }
 
 .search-bar svg {
-  fill: black;
   width: 20px;
 }
 
@@ -75,4 +95,8 @@ body {
 
 .location-container {
   grid-column: 2;
+}
+
+.location-container h2 {
+  color: #38bdf8;
 }
