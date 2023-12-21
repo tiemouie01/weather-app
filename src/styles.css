@@ -59,6 +59,8 @@ svg {
   width: 800px;
 }
 
+/* HEADER STYLES */
+
 .header {
   grid-row: 1;
   align-self: center;
@@ -71,6 +73,8 @@ svg {
 .header h1 {
   text-align: center;
 }
+
+/* SEARCH BAR STYLES */
 
 .search-bar {
   grid-row: 2;
@@ -102,7 +106,7 @@ svg {
 
   border-radius: 14px;
   border: 0;
-  box-shadow: 0 4px 4px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
   outline: none;
 }
 
@@ -112,7 +116,7 @@ svg {
   cursor: pointer;
   border-radius: 11px;
   border: 0;
-  box-shadow: 0 4px 4px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .search-bar button:hover {
@@ -122,18 +126,22 @@ svg {
 .search-bar button:active {
   background-color: #075985;
   transform: translateY(2px);
-  box-shadow: 0 2px 2px rgba(0,0,0,0.5); 
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .search-bar svg {
   width: 20px;
 }
 
+/* MAIN CONTENT STYLES */
+
 .main-content {
   grid-row: 3;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 24px;
+
+  padding-top: 32px;
 }
 
 .weather-container {
@@ -143,9 +151,33 @@ svg {
   gap: 4px;
 }
 
+.weather-icon-container {
+  padding: 16px;
+}
+
 .temperature-container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+
+.temperature-container button {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 4px solid #075985;
+  border-radius: 12px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.temperature-container button:hover {
+  background-color: #075985;
+}
+
+.temperature-container button:active {
+  background-color: #075985;
+  transform: translateY(2px);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .weather-container svg {
@@ -154,6 +186,8 @@ svg {
 
 .location-container {
   grid-column: 2;
+  margin-left: auto;
+  margin-right: 48px;
 }
 
 .location-container h2 {

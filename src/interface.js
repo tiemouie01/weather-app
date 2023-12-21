@@ -78,6 +78,7 @@ function addWeatherData(
 
   // Add a weather icon to the page according to the condition.
   const conditionDiv = document.createElement("div");
+  conditionDiv.className = "weather-icon-container";
   conditionDiv.innerHTML = setIcon(condition);
   weatherContainer.appendChild(conditionDiv);
 
